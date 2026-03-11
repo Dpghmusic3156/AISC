@@ -6,9 +6,9 @@
 ![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
 
-**AI Screen Capture** là một tiện ích nhỏ gọn trên Windows giúp bạn chụp màn hình và chuyển ngay hình ảnh đó cho AI (ChatGPT, Claude, Gemini) để phân tích, giải toán, dịch thuật, hoặc giải thích code trực tiếp trên màn hình của bạn. 
+**AI Screen Capture** là một tiện ích nhỏ gọn trên Windows giúp bạn chụp màn hình và chuyển ngay hình ảnh đó cho AI (ChatGPT, Claude, Gemini) để phân tích, giải toán, dịch thuật, hoặc giải thích code trực tiếp trên màn hình của bạn.
 
-👉 Mọi thứ hiển thị qua một popup tối giản giống hệt trải nghiệm của các Web Extension hiện đại (như *schoolCheat-AI*).
+👉 Mọi thứ hiển thị qua một popup tối giản giống hệt trải nghiệm của các Web Extension hiện đại (như _schoolCheat-AI_).
 
 ---
 
@@ -27,10 +27,12 @@
 ## 🚀 Hướng dẫn Cài đặt & Sử dụng
 
 ### 1. Yêu cầu hệ thống
+
 - Hệ điều hành: Windows 10 / Windows 11
 - Môi trường: [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ### 2. Cách chạy ứng dụng
+
 1. Tải toàn bộ Source Code về hoặc dùng lệnh:
    ```bash
    git clone https://github.com/dpghmusic3156/AISC.git
@@ -40,28 +42,31 @@
 4. Khi chạy thành công, app sẽ nằm ẩn dưới **Khay hệ thống (System Tray)** (góc phải dưới màn hình).
 
 ### 3. Cách thiết lập AI (Lần đầu tiên)
+
 - **Bước 1:** Chuột phải vào Icon App dưới System Tray -> Chọn **Settings**.
 - **Bước 2 (API Keys):** Nhập API Key của nền tảng bạn muốn dùng (OpenAI / Claude / Gemini).
 - **Bước 3 (Presets):** Chuyển sang Tab **Presets** -> Bấm **Add Preset**.
-  - **Name:** Tên gợi nhớ (Vd: *Giải Toán*, *Giải thích Code*).
+  - **Name:** Tên gợi nhớ (Vd: _Giải Toán_, _Giải thích Code_).
   - **Provider:** Chọn nền tảng (OpenAI/Claude/Gemini).
   - **Model:** Chọn Model (bấm nút 🔄 để tải danh sách Model mới nhất từ API).
-  - **System Prompt:** Nhập câu lệnh mặc định (Vd: *"Hãy giải thích đoạn code trong ảnh này một cách ngắn gọn"*).
+  - **System Prompt:** Nhập câu lệnh mặc định (Vd: _"Hãy giải thích đoạn code trong ảnh này một cách ngắn gọn"_).
 - **Bước 4 (Shortcuts):** Chọn cách bạn muốn gọi App (Bằng Chuột hay Bàn Phím).
 - **Bước 5:** Bấm **Save & Close**.
 
 ---
 
 ## 🎮 Thao tác nhanh
+
 1. Nhấn phím tắt bạn đã cài (Mặc định là `Ctrl + Chuột Giữa`).
 2. Màn hình sẽ tối đi -> Kéo chuột tạo vùng chữ nhật quét qua nội dung cần hỏi.
 3. Đợi biểu tượng tick xanh nhấp nháy load.
 4. Kết quả sẽ tự động bật lên ở dạng ô cửa sổ tối giản.
-5. Xem xong? Bấm phím tắt (*Mặc định: Chuột Giữa*) để ẩn cửa sổ đi.
+5. Xem xong? Bấm phím tắt (_Mặc định: Chuột Giữa_) để ẩn cửa sổ đi.
 
 ---
 
 ## 🛠 Công nghệ sử dụng
+
 - **C# / WPF** (Thư viện UI Windows).
 - Khung UI Material Design: **MaterialDesignInXamlToolkit**.
 - Quản lý Khay hệ thống: **Hardcodet.NotifyIcon.Wpf**.
@@ -69,4 +74,5 @@
 - Giao tiếp AI API HTTP Requests mượt mà kết hợp Async/Await.
 
 ---
-*Made with ❤️ by ghuy.*
+
+_Vibes with ❤️ by ghuy._
