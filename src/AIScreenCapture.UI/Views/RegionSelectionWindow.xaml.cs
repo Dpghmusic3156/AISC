@@ -85,9 +85,6 @@ public partial class RegionSelectionWindow : Window
         Canvas.SetTop(_selectionRect, _startPoint.Y);
         OverlayCanvas.Children.Add(_selectionRect);
 
-        // Hide the instruction text
-        InstructionText.Visibility = Visibility.Collapsed;
-
         OverlayCanvas.CaptureMouse();
     }
 
@@ -129,7 +126,6 @@ public partial class RegionSelectionWindow : Window
         {
             OverlayCanvas.Children.Remove(_selectionRect);
             _selectionRect = null;
-            InstructionText.Visibility = Visibility.Visible;
             return;
         }
 
@@ -153,7 +149,6 @@ public partial class RegionSelectionWindow : Window
         {
             OverlayCanvas.Children.Remove(_selectionRect);
             _selectionRect = null;
-            InstructionText.Visibility = Visibility.Visible;
             return;
         }
 
@@ -171,5 +166,12 @@ public partial class RegionSelectionWindow : Window
             Close();
             SelectionCancelled?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    private void Canvas_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        _isDragging = false;
+        Close();
+        SelectionCancelled?.Invoke(this, EventArgs.Empty);
     }
 }

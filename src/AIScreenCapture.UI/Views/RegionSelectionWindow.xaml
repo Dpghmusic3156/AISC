@@ -19,24 +19,11 @@
         <Canvas x:Name="OverlayCanvas" Background="#66000000"
                 MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
                 MouseMove="Canvas_MouseMove"
-                MouseLeftButtonUp="Canvas_MouseLeftButtonUp">
+                MouseLeftButtonUp="Canvas_MouseLeftButtonUp"
+                MouseRightButtonDown="Canvas_MouseRightButtonDown">
             
             <!-- Selection rectangle (added programmatically) -->
         </Canvas>
 
-        <!-- Instruction text -->
-        <TextBlock x:Name="InstructionText"
-                   Text="Kéo chuột để chọn vùng chụp  •  ESC để hủy"
-                   Foreground="White"
-                   FontSize="16"
-                   FontWeight="SemiBold"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Top"
-                   Margin="0,30,0,0"
-                   Opacity="0.85">
-            <TextBlock.Effect>
-                <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="1" Opacity="0.7"/>
-            </TextBlock.Effect>
-        </TextBlock>
     </Grid>
 </Window>
