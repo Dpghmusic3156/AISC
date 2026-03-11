@@ -11,3 +11,4 @@
 # OS generated
 Thumbs.db
 .DS_Store
+src/.vs
