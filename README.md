@@ -10,6 +10,8 @@
 
 👉 Mọi thứ hiển thị qua một popup tối giản.
 
+📥 **[TẢI ỨNG DỤNG TRỰC TIẾP TẠI ĐÂY (Release v1.0.0)](https://github.com/dpghmusic3156/AISC/releases/latest)**
+
 ---
 
 ## ✨ Tính năng nổi bật
@@ -33,13 +35,18 @@
 
 ### 2. Cách chạy ứng dụng
 
-1. Tải toàn bộ Source Code về hoặc dùng lệnh:
+**Dành cho Người Dùng Phổ Thông (Bản Ăn Sẵn):**
+1. Truy cập trang [Releases](https://github.com/dpghmusic3156/AISC/releases/latest).
+2. Tải file `AISC_Lightweight_v1.0.zip` về máy và Giải nén.
+3. Click đúp vào file `AIScreenCapture.UI.exe` để chạy. App sẽ hiện icon dưới **Khay hệ thống (System Tray)** (góc phải dưới màn hình).
+
+**Dành cho Lập Trình Viên (Biên Dịch Từ Code):**
+1. Tải bộ Source Code về bằng lệnh:
    ```bash
    git clone https://github.com/dpghmusic3156/AISC.git
    ```
 2. Mở thư mục `src` bằng **Visual Studio 2022** hoặc **JetBrains Rider**.
 3. Bấm **Run** dự án `AIScreenCapture.UI`.
-4. Khi chạy thành công, app sẽ nằm ẩn dưới **Khay hệ thống (System Tray)** (góc phải dưới màn hình).
 
 ### 3. Cách thiết lập AI (Lần đầu tiên)
 
