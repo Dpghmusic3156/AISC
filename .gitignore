@@ -33,3 +33,9 @@ TestResults/
 # Packages (NuGet)
 packages/
 *.nupkg
+
+# Custom Build Outputs
+AISC_Lightweight/
+*.zip
+*.log
+Publish/
