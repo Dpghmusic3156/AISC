@@ -12,7 +12,8 @@
           "CommunityToolkit.Mvvm": "8.4.0",
           "Hardcodet.NotifyIcon.Wpf": "2.0.1",
           "MaterialDesignThemes": "5.3.0",
-          "MdXaml": "1.27.0"
+          "MdXaml": "1.27.0",
+          "NHotkey.Wpf": "4.0.0"
         },
         "runtime": {
           "AIScreenCapture.UI.dll": {}
@@ -103,6 +104,25 @@
           "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
             "assemblyVersion": "1.1.0.0",
             "fileVersion": "1.1.77.27830"
+          }
+        }
+      },
+      "NHotkey/4.0.0": {
+        "runtime": {
+          "lib/net6.0-windows7.0/NHotkey.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "NHotkey.Wpf/4.0.0": {
+        "dependencies": {
+          "NHotkey": "4.0.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/NHotkey.Wpf.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
           }
         }
       },
@@ -206,6 +226,20 @@
       "sha512": "sha512-MCu674ZETgU18EbxfwIlRpUPJ02YbZenLsMCXTkpeA7KUBpXfFaOUDlEO+7UWu5AFnUoydg+aQENJkuaZPheMQ==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.77",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
+    },
+    "NHotkey/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5HKzttVKWeKoDQKJd3+J7Dy1MW6gbNNYfftkVufe2ddFQD0kXjnT1IN3ZJBfF6QVEQmHpQSp+/PT7Jo2YyHFcw==",
+      "path": "nhotkey/4.0.0",
+      "hashPath": "nhotkey.4.0.0.nupkg.sha512"
+    },
+    "NHotkey.Wpf/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ocVcoBAON/V+gUGBbAmfto+EKi2N8KcpjSjbxJaPkEzNpm9TefM8eJNji5bzdL3UreSiBtlPQ59VC9/UWQ5JIw==",
+      "path": "nhotkey.wpf/4.0.0",
+      "hashPath": "nhotkey.wpf.4.0.0.nupkg.sha512"
     },
     "System.Drawing.Common/10.0.4": {
       "type": "package",

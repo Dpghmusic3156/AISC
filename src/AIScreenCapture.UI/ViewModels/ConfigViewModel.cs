@@ -2,7 +2,9 @@ using AIScreenCapture.Core.Models;
 using AIScreenCapture.Core.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace AIScreenCapture.UI.ViewModels;
 
@@ -10,6 +12,8 @@ public partial class ConfigViewModel : ObservableObject
 {
     private readonly SettingsManager _settingsManager;
     private AppSettings _appSettings;
+
+    public Action? RequestClose { get; set; }
 
     [ObservableProperty]
     private string _apiKeyOpenAI = string.Empty;
@@ -26,6 +30,39 @@ public partial class ConfigViewModel : ObservableObject
     [ObservableProperty]
     private int _activePresetIndex;
 
+    [ObservableProperty]
+    private OverlayPosition _overlayPosition;
+
+    [ObservableProperty]
+    private AppTheme _theme;
+
+    [ObservableProperty]
+    private double _opacity;
+
+    [ObservableProperty]
+    private double _scale;
+
+    [ObservableProperty]
+    private double _checkmarkScale;
+
+    [ObservableProperty]
+    private double _fontSize;
+
+    [ObservableProperty]
+    private bool _showTimer;
+
+    [ObservableProperty]
+    private double _selectionOpacity;
+
+    [ObservableProperty]
+    private bool _useMouseShortcuts;
+
+    [ObservableProperty]
+    private string _captureShortcut = "Control+Shift+C";
+
+    [ObservableProperty]
+    private string _toggleShortcut = "Control+Shift+V";
+
     public ObservableCollection<AIPreset> Presets { get; } = new();
 
     public AIScreenCapture.Core.Models.AIProvider[] AvailableProviders => new[] 
@@ -34,6 +71,8 @@ public partial class ConfigViewModel : ObservableObject
         AIScreenCapture.Core.Models.AIProvider.Gemini,
         AIScreenCapture.Core.Models.AIProvider.Claude
     };
+
+    public double[] AvailableFontSizes => new double[] { 10, 12, 14, 16, 18, 20 };
 
     public ConfigViewModel()
     {
@@ -45,6 +84,19 @@ public partial class ConfigViewModel : ObservableObject
         ApiKeyClaude = _appSettings.ApiKeyClaude ?? string.Empty;
         BaseUrlOpenAI = _appSettings.BaseUrlOpenAI;
         ActivePresetIndex = _appSettings.ActivePresetIndex;
+        
+        OverlayPosition = _appSettings.OverlayPosition;
+        Theme = _appSettings.Theme;
+        Opacity = _appSettings.Opacity * 100; // UI slider uses 10-100%
+        Scale = _appSettings.Scale;
+        CheckmarkScale = _appSettings.CheckmarkScale;
+        FontSize = _appSettings.FontSize;
+        ShowTimer = _appSettings.ShowTimer;
+        SelectionOpacity = _appSettings.SelectionOpacity * 100; // UI slider 10-100%
+
+        UseMouseShortcuts = _appSettings.UseMouseShortcuts;
+        CaptureShortcut = _appSettings.CaptureShortcut;
+        ToggleShortcut = _appSettings.ToggleShortcut;
 
         foreach (var preset in _appSettings.Presets)
         {
@@ -55,11 +107,37 @@ public partial class ConfigViewModel : ObservableObject
     [RelayCommand]
     private void SaveSettings()
     {
+        PerformSave();
+        System.Windows.MessageBox.Show("Settings saved successfully!", "Success", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+    }
+
+    [RelayCommand]
+    private void SaveAndCloseSettings()
+    {
+        PerformSave();
+        RequestClose?.Invoke();
+    }
+
+    private void PerformSave()
+    {
         _appSettings.ApiKeyOpenAI = ApiKeyOpenAI;
         _appSettings.ApiKeyGemini = ApiKeyGemini;
         _appSettings.ApiKeyClaude = ApiKeyClaude;
         _appSettings.BaseUrlOpenAI = BaseUrlOpenAI;
         _appSettings.ActivePresetIndex = ActivePresetIndex;
+
+        _appSettings.OverlayPosition = OverlayPosition;
+        _appSettings.Theme = Theme;
+        _appSettings.Opacity = Opacity / 100.0;
+        _appSettings.Scale = Scale;
+        _appSettings.CheckmarkScale = CheckmarkScale;
+        _appSettings.FontSize = FontSize;
+        _appSettings.ShowTimer = ShowTimer;
+        _appSettings.SelectionOpacity = SelectionOpacity / 100.0;
+
+        _appSettings.UseMouseShortcuts = UseMouseShortcuts;
+        _appSettings.CaptureShortcut = CaptureShortcut;
+        _appSettings.ToggleShortcut = ToggleShortcut;
 
         _appSettings.Presets.Clear();
         foreach (var p in Presets)
@@ -68,7 +146,6 @@ public partial class ConfigViewModel : ObservableObject
         }
 
         _settingsManager.Save(_appSettings);
-        System.Windows.MessageBox.Show("Settings saved successfully!", "Success", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
     }
 
     [RelayCommand]

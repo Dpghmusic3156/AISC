@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AIScreenCapture.Core.Services;
 
 namespace AIScreenCapture.UI.Views;
 
@@ -27,6 +28,13 @@ public partial class RegionSelectionWindow : Window
     public RegionSelectionWindow()
     {
         InitializeComponent();
+        
+        // Apply opacity from settings
+        var settingsManager = new SettingsManager();
+        var settings = settingsManager.Load();
+        
+        byte alpha = (byte)(settings.SelectionOpacity * 255);
+        OverlayCanvas.Background = new SolidColorBrush(Color.FromArgb(alpha, 0, 0, 0));
     }
 
     /// <summary>

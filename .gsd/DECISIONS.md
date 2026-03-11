@@ -55,4 +55,16 @@
 - **Timeout**: 60 giây
 - **API Key Security**: Plain text trong config.json — không cần encrypt
 
+## Phase 5 Decisions
 
+**Date:** 2026-03-11
+
+### Scope
+- Không chức năng auto-startup.
+- Thêm About (credit: made by ghuy) vào System Tray Context Menu.
+- Xoá UI popup lúc loading/chụp ảnh, chỉ để lại một custom overlay dấu tick màu xanh nhấp nháy cho Loading.
+- Thêm các thuộc tính giao diện Appearance để custom ResultWindow (Position, Theme, Scale, Opacity, Font Size, Timer).
+
+### Approach
+- Chose: Xoá `LoadingWindow.xaml`, tạo `LoadingIndicatorWindow.xaml` không có viền (AllowsTransparency=true, Background=Transparent) chỉ chứa icon. Dùng WPF Storyboard để animate Opacity. Thêm tuỳ chọn Setting vào form cấu hình.
+- Reason: Tinh giản UI luồng thao tác.

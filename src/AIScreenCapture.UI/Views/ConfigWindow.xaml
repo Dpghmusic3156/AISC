@@ -16,7 +16,7 @@
         TextElement.FontSize="14"
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="#FFFFFF"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Window.DataContext>
         <vm:ConfigViewModel />
@@ -28,6 +28,16 @@
                 <x:Type TypeName="models:AIProvider"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <ObjectDataProvider x:Key="AvailablePositions" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="models:OverlayPosition"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="AvailableThemes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="models:AppTheme"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </Window.Resources>
 
     <Grid Margin="16">
@@ -36,7 +46,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         
-        <TabControl Grid.Row="0" materialDesign:ColorZoneAssist.Mode="PrimaryMid">
+        <TabControl Grid.Row="0" Background="#FFFFFF" BorderBrush="#E5E7EB" BorderThickness="1">
             <TabItem Header="API Keys">
                 <StackPanel Margin="16">
                     <TextBlock Text="Configure your AI Provider API Keys" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Margin="0,0,0,16"/>
@@ -120,8 +130,110 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
+            
+            <TabItem Header="Shortcuts">
+                <StackPanel Margin="16">
+                    <TextBlock Text="Global Shortcut Mode" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Margin="0,0,0,16"/>
+                    
+                    <CheckBox Content="Option 1: Use Mouse Clicks (Ctrl + Middle Mouse to Capture, Middle Mouse to Toggle)"
+                              IsChecked="{Binding UseMouseShortcuts}"
+                              Margin="0,0,0,24" FontSize="14" />
+
+                    <GroupBox Header="Option 2: Keyboard Hotkeys" materialDesign:ColorZoneAssist.Mode="Standard">
+                        <GroupBox.Style>
+                            <Style TargetType="{x:Type GroupBox}" BasedOn="{StaticResource MaterialDesignGroupBox}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding UseMouseShortcuts}" Value="True">
+                                        <Setter Property="UIElement.Opacity" Value="0.5"/>
+                                        <Setter Property="UIElement.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </GroupBox.Style>
+                        <StackPanel Margin="8">
+                            <TextBlock Text="To change, click the box and press your desired key combination:" Margin="0,0,0,16" FontStyle="Italic" Foreground="Gray"/>
+                            
+                            <TextBlock Text="Capture Screen Shortcut" Margin="0,0,0,8" FontWeight="Medium"/>
+                            <TextBox Text="{Binding CaptureShortcut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                     Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,0,0,16" 
+                                     PreviewKeyDown="HotkeyTextBox_PreviewKeyDown" 
+                                     IsReadOnly="True" Cursor="Hand" />
+                            
+                            <TextBlock Text="Toggle Window Visibility Shortcut" Margin="0,0,0,8" FontWeight="Medium"/>
+                            <TextBox Text="{Binding ToggleShortcut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                     Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,0,0,8" 
+                                     PreviewKeyDown="HotkeyTextBox_PreviewKeyDown" 
+                                     IsReadOnly="True" Cursor="Hand" />
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Appearance">
+                <StackPanel Margin="16">
+                    <TextBlock Text="Screenshot Overlay Position" Margin="0,0,0,8" FontWeight="Medium"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource AvailablePositions}}" SelectedItem="{Binding OverlayPosition}" Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="0,0,0,4"/>
+                    <TextBlock Text="Where to show results when using Ctrl+Middle Mouse shortcut" FontSize="12" Foreground="Gray" Margin="0,0,0,24"/>
+
+                    <GroupBox Header="Overlay Appearance" Style="{StaticResource MaterialDesignGroupBox}" materialDesign:ColorZoneAssist.Mode="Standard">
+                        <StackPanel Margin="8">
+                            <TextBlock Text="Theme" Margin="0,8,0,8"/>
+                            <ComboBox ItemsSource="{Binding Source={StaticResource AvailableThemes}}" SelectedItem="{Binding Theme}" Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="0,0,0,16"/>
+
+                            <Grid Margin="0,0,0,16">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="16"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="16"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <StackPanel Grid.Row="0" Grid.Column="0">
+                                    <TextBlock Text="{Binding Opacity, StringFormat='Popup Opacity: {0:N0}%'}" Margin="0,0,0,8"/>
+                                    <Slider Minimum="10" Maximum="100" Value="{Binding Opacity}" TickFrequency="1" IsSnapToTickEnabled="True" />
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Row="0" Grid.Column="2">
+                                    <TextBlock Text="{Binding Scale, StringFormat='Window Size: {0:N1}x'}" Margin="0,0,0,8"/>
+                                    <Slider Minimum="0.5" Maximum="2.0" Value="{Binding Scale}" TickFrequency="0.1" IsSnapToTickEnabled="True" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="0" Grid.Column="4">
+                                    <TextBlock Text="{Binding CheckmarkScale, StringFormat='Checkmark Size: {0:N1}x'}" Margin="0,0,0,8"/>
+                                    <Slider Minimum="0.5" Maximum="3.0" Value="{Binding CheckmarkScale}" TickFrequency="0.1" IsSnapToTickEnabled="True" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                                    <TextBlock Text="{Binding SelectionOpacity, StringFormat='Screen Dimness When Capturing: {0:N0}%'}" Margin="0,0,0,8"/>
+                                    <Slider Minimum="0" Maximum="100" Value="{Binding SelectionOpacity}" TickFrequency="1" IsSnapToTickEnabled="True" />
+                                </StackPanel>
+                            </Grid>
+
+                            <TextBlock Text="Font Size" Margin="0,8,0,8"/>
+                            <ComboBox ItemsSource="{Binding AvailableFontSizes}" SelectedItem="{Binding FontSize}" Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="0,0,0,16">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding StringFormat='Default ({0}px)'}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <CheckBox Content="Show Timer" IsChecked="{Binding ShowTimer}" Margin="0,8,0,8"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
         </TabControl>
         
-        <Button Grid.Row="1" Content="Save Settings" Command="{Binding SaveSettingsCommand}" HorizontalAlignment="Right" Margin="0,16,0,0" Width="120" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <Button Content="Save &amp; Close" Command="{Binding SaveAndCloseSettingsCommand}" Width="140" Margin="0,0,12,0" Background="#10B981" BorderBrush="#10B981" Foreground="White" />
+            <Button Content="Save Settings" Command="{Binding SaveSettingsCommand}" Width="120" Background="#3B82F6" BorderBrush="#3B82F6" Foreground="White" />
+        </StackPanel>
     </Grid>
 </Window>

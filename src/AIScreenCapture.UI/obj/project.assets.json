@@ -263,6 +263,38 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "NHotkey/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/NHotkey.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/NHotkey.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "NHotkey.Wpf/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NHotkey": "4.0.0"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/NHotkey.Wpf.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/NHotkey.Wpf.dll": {
+            "related": ".pdb"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "System.Drawing.Common/10.0.4": {
         "type": "package",
         "dependencies": {
@@ -602,6 +634,36 @@
         "tools/Install.ps1"
       ]
     },
+    "NHotkey/4.0.0": {
+      "sha512": "5HKzttVKWeKoDQKJd3+J7Dy1MW6gbNNYfftkVufe2ddFQD0kXjnT1IN3ZJBfF6QVEQmHpQSp+/PT7Jo2YyHFcw==",
+      "type": "package",
+      "path": "nhotkey/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/NHotkey.dll",
+        "lib/net462/NHotkey.pdb",
+        "lib/net6.0-windows7.0/NHotkey.dll",
+        "lib/net6.0-windows7.0/NHotkey.pdb",
+        "nhotkey.4.0.0.nupkg.sha512",
+        "nhotkey.nuspec"
+      ]
+    },
+    "NHotkey.Wpf/4.0.0": {
+      "sha512": "ocVcoBAON/V+gUGBbAmfto+EKi2N8KcpjSjbxJaPkEzNpm9TefM8eJNji5bzdL3UreSiBtlPQ59VC9/UWQ5JIw==",
+      "type": "package",
+      "path": "nhotkey.wpf/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/NHotkey.Wpf.dll",
+        "lib/net462/NHotkey.Wpf.pdb",
+        "lib/net6.0-windows7.0/NHotkey.Wpf.dll",
+        "lib/net6.0-windows7.0/NHotkey.Wpf.pdb",
+        "nhotkey.wpf.4.0.0.nupkg.sha512",
+        "nhotkey.wpf.nuspec"
+      ]
+    },
     "System.Drawing.Common/10.0.4": {
       "sha512": "jaRxGZXTezDxIe18pgnnycQLsZjU6ueZ+lGsODhaX3CXZ13e1T3xbmTnY6CEC+zbsC60TyhRxy+iHk0bXmjMBg==",
       "type": "package",
@@ -667,7 +729,8 @@
       "CommunityToolkit.Mvvm >= 8.4.0",
       "Hardcodet.NotifyIcon.Wpf >= 2.0.1",
       "MaterialDesignThemes >= 5.3.0",
-      "MdXaml >= 1.27.0"
+      "MdXaml >= 1.27.0",
+      "NHotkey.Wpf >= 4.0.0"
     ]
   },
   "packageFolders": {
@@ -734,6 +797,10 @@
           "MdXaml": {
             "target": "Package",
             "version": "[1.27.0, )"
+          },
+          "NHotkey.Wpf": {
+            "target": "Package",
+            "version": "[4.0.0, )"
           }
         },
         "imports": [

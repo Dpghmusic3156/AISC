@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 H:\hacker\AISC\src\AIScreenCapture.UI\App.xaml
-52007537391
+5-1982546190
 22674492945
-9439141036
-218-107708326
-Views\ConfigWindow.xaml;Views\LoadingWindow.xaml;Views\RegionSelectionWindow.xaml;Views\ResultPopupWindow.xaml;Views\ResultWindow.xaml;
+91832465086
+220289694541
+Views\ConfigWindow.xaml;Views\LoadingIndicatorWindow.xaml;Views\RegionSelectionWindow.xaml;Views\ResultPopupWindow.xaml;Views\ResultWindow.xaml;
 
 False
 
