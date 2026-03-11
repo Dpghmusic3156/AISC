@@ -45,7 +45,7 @@ public partial class App : Application
             _hiddenWindow.Show();
 
             var icon = System.Drawing.Icon.ExtractAssociatedIcon(
-                System.Reflection.Assembly.GetExecutingAssembly().Location);
+                Environment.ProcessPath ?? string.Empty);
 
             _taskbarIcon = new TaskbarIcon
             {
@@ -252,8 +252,8 @@ public partial class App : Application
             // Show loading window with timer tracking
             EnsureLoadingWindow();
             _isProcessing = true;
-            _loadingIndicatorWindow.StartProcessing();
-            _loadingIndicatorWindow.Show();
+            _loadingIndicatorWindow!.StartProcessing();
+            _loadingIndicatorWindow!.Show();
 
             string response = await client.SendImageAsync(
                 capturedImage,
@@ -267,9 +267,9 @@ public partial class App : Application
 
             // Show result window
             EnsureResultWindow();
-            _resultWindow.SetResult(response, activePreset.ModelName);
-            _resultWindow.Show();
-            _resultWindow.Activate();
+            _resultWindow!.SetResult(response, activePreset.ModelName);
+            _resultWindow!.Show();
+            _resultWindow!.Activate();
         }
         catch (InvalidOperationException ex)
         {
@@ -277,8 +277,8 @@ public partial class App : Application
             _loadingIndicatorWindow?.StopProcessing();
             _loadingIndicatorWindow?.Hide();
             if (_resultWindow == null) EnsureResultWindow();
-            _resultWindow.SetResult($"**Configuration Error:**\n\n{ex.Message}", "Error");
-            _resultWindow.Show();
+            _resultWindow!.SetResult($"**Configuration Error:**\n\n{ex.Message}", "Error");
+            _resultWindow!.Show();
         }
         catch (HttpRequestException ex)
         {
@@ -286,8 +286,8 @@ public partial class App : Application
             _loadingIndicatorWindow?.StopProcessing();
             _loadingIndicatorWindow?.Hide();
             if (_resultWindow == null) EnsureResultWindow();
-            _resultWindow.SetResult($"**API Error:**\n\n{ex.Message}", "Error");
-            _resultWindow.Show();
+            _resultWindow!.SetResult($"**API Error:**\n\n{ex.Message}", "Error");
+            _resultWindow!.Show();
         }
         catch (TaskCanceledException)
         {
@@ -295,8 +295,8 @@ public partial class App : Application
             _loadingIndicatorWindow?.StopProcessing();
             _loadingIndicatorWindow?.Hide();
             if (_resultWindow == null) EnsureResultWindow();
-            _resultWindow.SetResult("**Timeout (60s)**\n\nThe request took too long. Try a smaller region or check your connection.", "Error");
-            _resultWindow.Show();
+            _resultWindow!.SetResult("**Timeout (60s)**\n\nThe request took too long. Try a smaller region or check your connection.", "Error");
+            _resultWindow!.Show();
         }
         catch (Exception ex)
         {
@@ -304,8 +304,8 @@ public partial class App : Application
             _loadingIndicatorWindow?.StopProcessing();
             _loadingIndicatorWindow?.Hide();
             if (_resultWindow == null) EnsureResultWindow();
-            _resultWindow.SetResult($"**Unexpected Error:**\n\n{ex.Message}\n\n```\n{ex.StackTrace}\n```", "Error");
-            _resultWindow.Show();
+            _resultWindow!.SetResult($"**Unexpected Error:**\n\n{ex.Message}\n\n```\n{ex.StackTrace}\n```", "Error");
+            _resultWindow!.Show();
         }
     }
 

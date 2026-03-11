@@ -10,8 +10,6 @@ public partial class LoadingIndicatorWindow : Window
 {
     private readonly SettingsManager _settingsManager;
     private readonly AppSettings _settings;
-    private DispatcherTimer? _timer;
-    private int _elapsedSeconds = 0;
 
     public LoadingIndicatorWindow()
     {
@@ -85,7 +83,6 @@ public partial class LoadingIndicatorWindow : Window
 
     public void StopProcessing()
     {
-        _timer?.Stop();
     }
 
     protected override void OnPreviewMouseUp(System.Windows.Input.MouseButtonEventArgs e)

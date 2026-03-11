@@ -12,7 +12,6 @@ public partial class ResultWindow : Window
     private string _rawMarkdown = string.Empty;
     private readonly SettingsManager _settingsManager;
     private readonly AppSettings _settings;
-    private bool _isProcessing = false;
 
     public ResultWindow()
     {
@@ -102,8 +101,6 @@ public partial class ResultWindow : Window
 
     public void SetResult(string markdown, string modelName)
     {
-        _isProcessing = false;
-        
         _rawMarkdown = markdown;
         
         ResultText.Text = markdown.Trim();
