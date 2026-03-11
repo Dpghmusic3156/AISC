@@ -122,6 +122,10 @@ public partial class ResultWindow : Window
 
         if (e.ChangedButton == MouseButton.Left)
         {
+            if (!string.IsNullOrEmpty(_rawMarkdown))
+            {
+                Clipboard.SetText(_rawMarkdown);
+            }
             this.Close();
             e.Handled = true;
         }
@@ -130,20 +134,5 @@ public partial class ResultWindow : Window
             this.Hide();
             e.Handled = true;
         }
-    }
-
-    private void CloseButton_Click(object sender, RoutedEventArgs e)
-    {
-        this.Close();
-    }
-
-    private async void CopyButton_Click(object sender, RoutedEventArgs e)
-    {
-        Clipboard.SetText(_rawMarkdown);
-        
-        // Flash confirmation
-        NotificationText.Visibility = Visibility.Visible;
-        await Task.Delay(2000);
-        NotificationText.Visibility = Visibility.Collapsed;
     }
 }
