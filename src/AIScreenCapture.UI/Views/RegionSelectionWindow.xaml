@@ -1,0 +1,42 @@
+<Window x:Class="AIScreenCapture.UI.Views.RegionSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Region Selection"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Cursor="Cross"
+        KeyDown="Window_KeyDown">
+    
+    <Grid>
+        <!-- Frozen screenshot background -->
+        <Image x:Name="ScreenshotBackground" Stretch="Fill" />
+
+        <!-- Dark semi-transparent overlay -->
+        <Canvas x:Name="OverlayCanvas" Background="#66000000"
+                MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
+                MouseMove="Canvas_MouseMove"
+                MouseLeftButtonUp="Canvas_MouseLeftButtonUp">
+            
+            <!-- Selection rectangle (added programmatically) -->
+        </Canvas>
+
+        <!-- Instruction text -->
+        <TextBlock x:Name="InstructionText"
+                   Text="Kéo chuột để chọn vùng chụp  •  ESC để hủy"
+                   Foreground="White"
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,30,0,0"
+                   Opacity="0.85">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="1" Opacity="0.7"/>
+            </TextBlock.Effect>
+        </TextBlock>
+    </Grid>
+</Window>

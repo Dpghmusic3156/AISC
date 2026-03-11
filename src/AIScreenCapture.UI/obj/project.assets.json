@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
+      "AvalonEdit/6.3.0.90": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "CommunityToolkit.Mvvm/8.4.0": {
         "type": "package",
         "compile": {
@@ -18,56 +34,21 @@
           "buildTransitive/CommunityToolkit.Mvvm.targets": {}
         }
       },
-      "H.GeneratedIcons.System.Drawing/2.4.1": {
+      "Hardcodet.NotifyIcon.Wpf/2.0.1": {
         "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "10.0.0"
-        },
         "compile": {
-          "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.dll": {
+          "lib/net8.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "H.NotifyIcon/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "H.GeneratedIcons.System.Drawing": "2.4.1",
-          "System.Memory": "4.6.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.1.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/H.NotifyIcon.dll": {
+          "lib/net8.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll": {
             "related": ".xml"
           }
         },
-        "runtime": {
-          "lib/netstandard2.0/H.NotifyIcon.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "H.NotifyIcon.Wpf/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "H.NotifyIcon": "2.4.1",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/net462/H.NotifyIcon.Wpf.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/H.NotifyIcon.Wpf.dll": {
-            "related": ".xml"
-          }
-        }
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
       },
       "MaterialDesignColors/5.3.0": {
         "type": "package",
@@ -216,7 +197,35 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
-      "Microsoft.Win32.SystemEvents/10.0.0": {
+      "MdXaml/1.27.0": {
+        "type": "package",
+        "dependencies": {
+          "AvalonEdit": "6.3.0.90",
+          "MdXaml.Plugins": "1.27.0"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/MdXaml.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/MdXaml.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "MdXaml.Plugins/1.27.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/MdXaml.Plugins.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/MdXaml.Plugins.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Microsoft.Win32.SystemEvents/10.0.4": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
@@ -254,10 +263,10 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "System.Drawing.Common/10.0.0": {
+      "System.Drawing.Common/10.0.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "10.0.0"
+          "Microsoft.Win32.SystemEvents": "10.0.4"
         },
         "compile": {
           "lib/net8.0/System.Drawing.Common.dll": {
@@ -285,49 +294,44 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Memory/4.6.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/_._": {}
-        },
-        "runtime": {
-          "lib/net7.0/_._": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
       "AIScreenCapture.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "System.Drawing.Common": "10.0.4"
+        },
         "compile": {
           "bin/placeholder/AIScreenCapture.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/AIScreenCapture.Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
   "libraries": {
+    "AvalonEdit/6.3.0.90": {
+      "sha512": "WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
+      "type": "package",
+      "path": "avalonedit/6.3.0.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageReadme.md",
+        "avalonedit.6.3.0.90.nupkg.sha512",
+        "avalonedit.nuspec",
+        "images/AvalonEditNuGetPackageIcon.png",
+        "lib/net462/ICSharpCode.AvalonEdit.dll",
+        "lib/net462/ICSharpCode.AvalonEdit.xml",
+        "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.dll",
+        "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.xml",
+        "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll",
+        "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.xml"
+      ]
+    },
     "CommunityToolkit.Mvvm/8.4.0": {
       "sha512": "tqVU8yc/ADO9oiTRyTnwhFN68hCwvkliMierptWOudIAvWY1mWCh5VFh+guwHJmpMwfg0J0rY+yyd5Oy7ty9Uw==",
       "type": "package",
@@ -370,61 +374,25 @@
         "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
       ]
     },
-    "H.GeneratedIcons.System.Drawing/2.4.1": {
-      "sha512": "gjYhuwHQzISqKhcNYaRdDhzKCoqLZii+6TTHP0MQf4Q9+H6z4f4A5Xu/j8B8XpFPQ1grCMlQYREvNyNJT9Q/Bg==",
+    "Hardcodet.NotifyIcon.Wpf/2.0.1": {
+      "sha512": "dtxmeZXzV2GzSm91aZ3hqzgoeVoARSkDPVCYfhVUNyyKBWYxMgNC0EcLiSYxD4Uc4alq/2qb3SmV8DgAENLRLQ==",
       "type": "package",
-      "path": "h.generatedicons.system.drawing/2.4.1",
+      "path": "hardcodet.notifyicon.wpf/2.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
-        "h.generatedicons.system.drawing.2.4.1.nupkg.sha512",
-        "h.generatedicons.system.drawing.nuspec",
-        "lib/net10.0/H.GeneratedIcons.System.Drawing.dll",
-        "lib/net10.0/H.GeneratedIcons.System.Drawing.xml",
-        "lib/net462/H.GeneratedIcons.System.Drawing.dll",
-        "lib/net462/H.GeneratedIcons.System.Drawing.xml",
-        "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.dll",
-        "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.xml",
-        "nuget_icon.png"
-      ]
-    },
-    "H.NotifyIcon/2.4.1": {
-      "sha512": "nNPgNzo5UHcWYpVLO3AsRlH8fKE9shBA7/WLpZrFZUFbzpKGcLnz15Kmg0pQ851aboAfm3YuHjYFsYQges/pyw==",
-      "type": "package",
-      "path": "h.notifyicon/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "h.notifyicon.2.4.1.nupkg.sha512",
-        "h.notifyicon.nuspec",
-        "lib/net10.0/H.NotifyIcon.dll",
-        "lib/net10.0/H.NotifyIcon.xml",
-        "lib/net462/H.NotifyIcon.dll",
-        "lib/net462/H.NotifyIcon.xml",
-        "lib/netstandard2.0/H.NotifyIcon.dll",
-        "lib/netstandard2.0/H.NotifyIcon.xml",
-        "nuget_icon.png"
-      ]
-    },
-    "H.NotifyIcon.Wpf/2.4.1": {
-      "sha512": "aDfDSHCCOWgQoIvAApiog/MhriXibacqANQm+b5GaRCgRg92u5J2QcoW2C+wIblgxhtGx3o32/DCKWRR5C/KLw==",
-      "type": "package",
-      "path": "h.notifyicon.wpf/2.4.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "h.notifyicon.wpf.2.4.1.nupkg.sha512",
-        "h.notifyicon.wpf.nuspec",
-        "lib/net10.0-windows7.0/H.NotifyIcon.Wpf.dll",
-        "lib/net10.0-windows7.0/H.NotifyIcon.Wpf.xml",
-        "lib/net462/H.NotifyIcon.Wpf.dll",
-        "lib/net462/H.NotifyIcon.Wpf.xml",
-        "nuget_icon.png",
-        "tools/VisualStudioToolsManifest.xml"
+        "LICENSE",
+        "hardcodet.notifyicon.wpf.2.0.1.nupkg.sha512",
+        "hardcodet.notifyicon.wpf.nuspec",
+        "icon.png",
+        "lib/net462/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net462/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/net472/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net472/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/net6.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net6.0-windows7.0/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/net8.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net8.0-windows7.0/Hardcodet.NotifyIcon.Wpf.xml"
       ]
     },
     "MaterialDesignColors/5.3.0": {
@@ -546,10 +514,41 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "Microsoft.Win32.SystemEvents/10.0.0": {
-      "sha512": "bYdnhuD0XxcVTrxc8RyBjXo+AXYWJPnda3clhGz2Kakleyun1PyrzYV8RezT7ZYmR9OBSOgvpFQcvHo/K8Y90w==",
+    "MdXaml/1.27.0": {
+      "sha512": "VWhqhCeKVkJe8vkPmXuGZlRX01WDrTugOLeUvJn18jH/8DrGGVBvtgIlJoELHD2f1DiEWqF3lxxjV55vnzE7Tg==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/10.0.0",
+      "path": "mdxaml/1.27.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "MdXaml.md",
+        "lib/net45/MdXaml.dll",
+        "lib/net462/MdXaml.dll",
+        "lib/net6.0-windows7.0/MdXaml.dll",
+        "lib/netcoreapp3.0/MdXaml.dll",
+        "mdxaml.1.27.0.nupkg.sha512",
+        "mdxaml.nuspec"
+      ]
+    },
+    "MdXaml.Plugins/1.27.0": {
+      "sha512": "We7LtBdoukRg9mqTfa1f5n8z/GQPMKBRj3URk9DiMuqzIHkW1lTgK5njVPSScxsRt4YzW22423tSnLWNm2MJKg==",
+      "type": "package",
+      "path": "mdxaml.plugins/1.27.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MdXaml.Plugins.dll",
+        "lib/net462/MdXaml.Plugins.dll",
+        "lib/net6.0-windows7.0/MdXaml.Plugins.dll",
+        "lib/netcoreapp3.0/MdXaml.Plugins.dll",
+        "mdxaml.plugins.1.27.0.nupkg.sha512",
+        "mdxaml.plugins.nuspec"
+      ]
+    },
+    "Microsoft.Win32.SystemEvents/10.0.4": {
+      "sha512": "vrZD/q7cibjX1yGULXDnt0G2BXcMqvJ8+ZlggrDIexVjtd0vOJPqW8+I7Y6BwNHDLukge70h3BIZFxD7ccL/eQ==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/10.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -570,7 +569,7 @@
         "lib/net9.0/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.10.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.10.0.4.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
         "runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.xml",
@@ -603,10 +602,10 @@
         "tools/Install.ps1"
       ]
     },
-    "System.Drawing.Common/10.0.0": {
-      "sha512": "kohT9ZZlkB5R5ifihCBnPJLdIUQGiTj1ZI6z4LKatr+F4MmIJJu7qQpBkqt9280ivtnSvlTx9qZEY+CpJ0zMkA==",
+    "System.Drawing.Common/10.0.4": {
+      "sha512": "jaRxGZXTezDxIe18pgnnycQLsZjU6ueZ+lGsODhaX3CXZ13e1T3xbmTnY6CEC+zbsC60TyhRxy+iHk0bXmjMBg==",
       "type": "package",
-      "path": "system.drawing.common/10.0.0",
+      "path": "system.drawing.common/10.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -651,95 +650,9 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "system.drawing.common.10.0.0.nupkg.sha512",
+        "system.drawing.common.10.0.4.nupkg.sha512",
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Memory/4.6.0": {
-      "sha512": "OEkbBQoklHngJ8UD8ez2AERSk2g+/qpAaSWWCBFbpH727HxDq5ydVkuncBaKcKfwRqXGWx64dS6G1SUScMsitg==",
-      "type": "package",
-      "path": "system.memory/4.6.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "buildTransitive/net461/System.Memory.targets",
-        "buildTransitive/net462/_._",
-        "lib/net462/System.Memory.dll",
-        "lib/net462/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "system.memory.4.6.0.nupkg.sha512",
-        "system.memory.nuspec"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/6.1.0": {
-      "sha512": "5o/HZxx6RVqYlhKSq8/zronDkALJZUT2Vz0hx43f0gwe8mwlM0y2nYlqdBwLMzr262Bwvpikeb/yEwkAa5PADg==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/6.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "buildTransitive/net461/System.Runtime.CompilerServices.Unsafe.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
-        "lib/net462/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net462/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/net7.0/_._",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.6.1.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec"
-      ]
-    },
-    "System.ValueTuple/4.5.0": {
-      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
-      "type": "package",
-      "path": "system.valuetuple/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.5.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "AIScreenCapture.Core/1.0.0": {
@@ -752,8 +665,9 @@
     "net8.0-windows7.0": [
       "AIScreenCapture.Core >= 1.0.0",
       "CommunityToolkit.Mvvm >= 8.4.0",
-      "H.NotifyIcon.Wpf >= 2.4.1",
-      "MaterialDesignThemes >= 5.3.0"
+      "Hardcodet.NotifyIcon.Wpf >= 2.0.1",
+      "MaterialDesignThemes >= 5.3.0",
+      "MdXaml >= 1.27.0"
     ]
   },
   "packageFolders": {
@@ -769,12 +683,14 @@
       "outputPath": "H:\\hacker\\AISC\\src\\AIScreenCapture.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -797,7 +713,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -807,13 +723,17 @@
             "target": "Package",
             "version": "[8.4.0, )"
           },
-          "H.NotifyIcon.Wpf": {
+          "Hardcodet.NotifyIcon.Wpf": {
             "target": "Package",
-            "version": "[2.4.1, )"
+            "version": "[2.0.1, )"
           },
           "MaterialDesignThemes": {
             "target": "Package",
             "version": "[5.3.0, )"
+          },
+          "MdXaml": {
+            "target": "Package",
+            "version": "[1.27.0, )"
           }
         },
         "imports": [
@@ -853,20 +773,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'H.NotifyIcon.Wpf 2.4.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "H.NotifyIcon.Wpf",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

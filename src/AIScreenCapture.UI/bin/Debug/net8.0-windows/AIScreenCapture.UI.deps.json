@@ -10,11 +10,20 @@
         "dependencies": {
           "AIScreenCapture.Core": "1.0.0",
           "CommunityToolkit.Mvvm": "8.4.0",
-          "H.NotifyIcon.Wpf": "2.4.1",
-          "MaterialDesignThemes": "5.3.0"
+          "Hardcodet.NotifyIcon.Wpf": "2.0.1",
+          "MaterialDesignThemes": "5.3.0",
+          "MdXaml": "1.27.0"
         },
         "runtime": {
           "AIScreenCapture.UI.dll": {}
+        }
+      },
+      "AvalonEdit/6.3.0.90": {
+        "runtime": {
+          "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "assemblyVersion": "6.3.0.90",
+            "fileVersion": "6.3.0.90"
+          }
         }
       },
       "CommunityToolkit.Mvvm/8.4.0": {
@@ -25,39 +34,11 @@
           }
         }
       },
-      "H.GeneratedIcons.System.Drawing/2.4.1": {
-        "dependencies": {
-          "System.Drawing.Common": "10.0.0"
-        },
+      "Hardcodet.NotifyIcon.Wpf/2.0.1": {
         "runtime": {
-          "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.dll": {
+          "lib/net8.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.4.1.0"
-          }
-        }
-      },
-      "H.NotifyIcon/2.4.1": {
-        "dependencies": {
-          "H.GeneratedIcons.System.Drawing": "2.4.1",
-          "System.Memory": "4.6.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.1.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/H.NotifyIcon.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.4.1.0"
-          }
-        }
-      },
-      "H.NotifyIcon.Wpf/2.4.1": {
-        "dependencies": {
-          "H.NotifyIcon": "2.4.1",
-          "System.ValueTuple": "4.5.0"
-        },
-        "runtime": {
-          "lib/net462/H.NotifyIcon.Wpf.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.4.1.0"
+            "fileVersion": "2.0.1.2717"
           }
         }
       },
@@ -81,11 +62,31 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/10.0.0": {
+      "MdXaml/1.27.0": {
+        "dependencies": {
+          "AvalonEdit": "6.3.0.90",
+          "MdXaml.Plugins": "1.27.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/MdXaml.dll": {
+            "assemblyVersion": "1.27.0.0",
+            "fileVersion": "1.27.0.0"
+          }
+        }
+      },
+      "MdXaml.Plugins/1.27.0": {
+        "runtime": {
+          "lib/net6.0-windows7.0/MdXaml.Plugins.dll": {
+            "assemblyVersion": "1.27.0.0",
+            "fileVersion": "1.27.0.0"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/10.0.4": {
         "runtime": {
           "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.426.12010"
           }
         },
         "runtimeTargets": {
@@ -93,7 +94,7 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.426.12010"
           }
         }
       },
@@ -105,29 +106,29 @@
           }
         }
       },
-      "System.Drawing.Common/10.0.0": {
+      "System.Drawing.Common/10.0.4": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "10.0.0"
+          "Microsoft.Win32.SystemEvents": "10.0.4"
         },
         "runtime": {
           "lib/net8.0/System.Drawing.Common.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.426.12010"
           },
           "lib/net8.0/System.Private.Windows.Core.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.426.12010"
           },
           "lib/net8.0/System.Private.Windows.GdiPlus.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.426.12010"
           }
         }
       },
-      "System.Memory/4.6.0": {},
-      "System.Runtime.CompilerServices.Unsafe/6.1.0": {},
-      "System.ValueTuple/4.5.0": {},
       "AIScreenCapture.Core/1.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "10.0.4"
+        },
         "runtime": {
           "AIScreenCapture.Core.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -143,6 +144,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AvalonEdit/6.3.0.90": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
+      "path": "avalonedit/6.3.0.90",
+      "hashPath": "avalonedit.6.3.0.90.nupkg.sha512"
+    },
     "CommunityToolkit.Mvvm/8.4.0": {
       "type": "package",
       "serviceable": true,
@@ -150,26 +158,12 @@
       "path": "communitytoolkit.mvvm/8.4.0",
       "hashPath": "communitytoolkit.mvvm.8.4.0.nupkg.sha512"
     },
-    "H.GeneratedIcons.System.Drawing/2.4.1": {
+    "Hardcodet.NotifyIcon.Wpf/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gjYhuwHQzISqKhcNYaRdDhzKCoqLZii+6TTHP0MQf4Q9+H6z4f4A5Xu/j8B8XpFPQ1grCMlQYREvNyNJT9Q/Bg==",
-      "path": "h.generatedicons.system.drawing/2.4.1",
-      "hashPath": "h.generatedicons.system.drawing.2.4.1.nupkg.sha512"
-    },
-    "H.NotifyIcon/2.4.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nNPgNzo5UHcWYpVLO3AsRlH8fKE9shBA7/WLpZrFZUFbzpKGcLnz15Kmg0pQ851aboAfm3YuHjYFsYQges/pyw==",
-      "path": "h.notifyicon/2.4.1",
-      "hashPath": "h.notifyicon.2.4.1.nupkg.sha512"
-    },
-    "H.NotifyIcon.Wpf/2.4.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aDfDSHCCOWgQoIvAApiog/MhriXibacqANQm+b5GaRCgRg92u5J2QcoW2C+wIblgxhtGx3o32/DCKWRR5C/KLw==",
-      "path": "h.notifyicon.wpf/2.4.1",
-      "hashPath": "h.notifyicon.wpf.2.4.1.nupkg.sha512"
+      "sha512": "sha512-dtxmeZXzV2GzSm91aZ3hqzgoeVoARSkDPVCYfhVUNyyKBWYxMgNC0EcLiSYxD4Uc4alq/2qb3SmV8DgAENLRLQ==",
+      "path": "hardcodet.notifyicon.wpf/2.0.1",
+      "hashPath": "hardcodet.notifyicon.wpf.2.0.1.nupkg.sha512"
     },
     "MaterialDesignColors/5.3.0": {
       "type": "package",
@@ -185,12 +179,26 @@
       "path": "materialdesignthemes/5.3.0",
       "hashPath": "materialdesignthemes.5.3.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/10.0.0": {
+    "MdXaml/1.27.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bYdnhuD0XxcVTrxc8RyBjXo+AXYWJPnda3clhGz2Kakleyun1PyrzYV8RezT7ZYmR9OBSOgvpFQcvHo/K8Y90w==",
-      "path": "microsoft.win32.systemevents/10.0.0",
-      "hashPath": "microsoft.win32.systemevents.10.0.0.nupkg.sha512"
+      "sha512": "sha512-VWhqhCeKVkJe8vkPmXuGZlRX01WDrTugOLeUvJn18jH/8DrGGVBvtgIlJoELHD2f1DiEWqF3lxxjV55vnzE7Tg==",
+      "path": "mdxaml/1.27.0",
+      "hashPath": "mdxaml.1.27.0.nupkg.sha512"
+    },
+    "MdXaml.Plugins/1.27.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-We7LtBdoukRg9mqTfa1f5n8z/GQPMKBRj3URk9DiMuqzIHkW1lTgK5njVPSScxsRt4YzW22423tSnLWNm2MJKg==",
+      "path": "mdxaml.plugins/1.27.0",
+      "hashPath": "mdxaml.plugins.1.27.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/10.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vrZD/q7cibjX1yGULXDnt0G2BXcMqvJ8+ZlggrDIexVjtd0vOJPqW8+I7Y6BwNHDLukge70h3BIZFxD7ccL/eQ==",
+      "path": "microsoft.win32.systemevents/10.0.4",
+      "hashPath": "microsoft.win32.systemevents.10.0.4.nupkg.sha512"
     },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.77": {
       "type": "package",
@@ -199,33 +207,12 @@
       "path": "microsoft.xaml.behaviors.wpf/1.1.77",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
     },
-    "System.Drawing.Common/10.0.0": {
+    "System.Drawing.Common/10.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kohT9ZZlkB5R5ifihCBnPJLdIUQGiTj1ZI6z4LKatr+F4MmIJJu7qQpBkqt9280ivtnSvlTx9qZEY+CpJ0zMkA==",
-      "path": "system.drawing.common/10.0.0",
-      "hashPath": "system.drawing.common.10.0.0.nupkg.sha512"
-    },
-    "System.Memory/4.6.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OEkbBQoklHngJ8UD8ez2AERSk2g+/qpAaSWWCBFbpH727HxDq5ydVkuncBaKcKfwRqXGWx64dS6G1SUScMsitg==",
-      "path": "system.memory/4.6.0",
-      "hashPath": "system.memory.4.6.0.nupkg.sha512"
-    },
-    "System.Runtime.CompilerServices.Unsafe/6.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5o/HZxx6RVqYlhKSq8/zronDkALJZUT2Vz0hx43f0gwe8mwlM0y2nYlqdBwLMzr262Bwvpikeb/yEwkAa5PADg==",
-      "path": "system.runtime.compilerservices.unsafe/6.1.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.6.1.0.nupkg.sha512"
-    },
-    "System.ValueTuple/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
-      "path": "system.valuetuple/4.5.0",
-      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+      "sha512": "sha512-jaRxGZXTezDxIe18pgnnycQLsZjU6ueZ+lGsODhaX3CXZ13e1T3xbmTnY6CEC+zbsC60TyhRxy+iHk0bXmjMBg==",
+      "path": "system.drawing.common/10.0.4",
+      "hashPath": "system.drawing.common.10.0.4.nupkg.sha512"
     },
     "AIScreenCapture.Core/1.0.0": {
       "type": "project",

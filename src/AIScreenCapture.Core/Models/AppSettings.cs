@@ -8,6 +8,19 @@ public class AppSettings
     public string ApiKeyGemini { get; set; } = string.Empty;
     public string ApiKeyClaude { get; set; } = string.Empty;
 
+    public bool SendDirectlyToAI { get; set; } = true;
+    public int ActivePresetIndex { get; set; } = 0;
+    public string? BaseUrlOpenAI { get; set; }
+
+    // Window Persist State
+    public double ResultWindowWidth { get; set; } = 600;
+    public double ResultWindowHeight { get; set; } = 500;
+    public double ResultWindowLeft { get; set; } = -1;
+    public double ResultWindowTop { get; set; } = -1;
+    
+    public double LoadingWindowLeft { get; set; } = -1;
+    public double LoadingWindowTop { get; set; } = -1;
+
     public List<AIPreset> Presets { get; set; } = new();
 
     public AppSettings()
