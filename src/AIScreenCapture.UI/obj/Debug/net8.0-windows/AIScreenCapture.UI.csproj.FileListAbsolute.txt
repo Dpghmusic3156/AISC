@@ -38,3 +38,5 @@ H:\hacker\AISC\src\AIScreenCapture.UI\bin\Debug\net8.0-windows\AIScreenCapture.C
 H:\hacker\AISC\src\AIScreenCapture.UI\obj\Debug\net8.0-windows\App.baml
 H:\hacker\AISC\src\AIScreenCapture.UI\obj\Debug\net8.0-windows\Views\ConfigWindow.baml
 H:\hacker\AISC\src\AIScreenCapture.UI\obj\Debug\net8.0-windows\AIScreenCapture.UI.g.resources
+H:\hacker\AISC\src\AIScreenCapture.UI\obj\Debug\net8.0-windows\Views\ResultPopupWindow.baml
+H:\hacker\AISC\src\AIScreenCapture.UI\obj\Debug\net8.0-windows\Views\ResultPopupWindow.g.cs

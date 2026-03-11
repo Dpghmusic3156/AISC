@@ -11,6 +11,7 @@ public partial class App : Application
 {
     private TaskbarIcon? _taskbarIcon;
     private ConfigWindow? _configWindow;
+    private ResultPopupWindow? _resultPopupWindow;
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -27,10 +28,14 @@ public partial class App : Application
         var settingsItem = new MenuItem { Header = "Settings..." };
         settingsItem.Click += (s, args) => ShowConfigWindow();
 
+        var testPopupItem = new MenuItem { Header = "Test Popup" };
+        testPopupItem.Click += (s, args) => ShowResultPopupWindow();
+
         var exitItem = new MenuItem { Header = "Exit" };
         exitItem.Click += (s, args) => Application.Current.Shutdown();
 
         contextMenu.Items.Add(settingsItem);
+        contextMenu.Items.Add(testPopupItem);
         contextMenu.Items.Add(new Separator());
         contextMenu.Items.Add(exitItem);
 
@@ -51,6 +56,17 @@ public partial class App : Application
                 _configWindow.WindowState = WindowState.Normal;
             _configWindow.Activate();
         }
+    }
+
+    private void ShowResultPopupWindow()
+    {
+        if (_resultPopupWindow == null)
+        {
+            _resultPopupWindow = new ResultPopupWindow();
+            _resultPopupWindow.Closed += (s, e) => _resultPopupWindow = null;
+        }
+        _resultPopupWindow.Show();
+        _resultPopupWindow.Activate();
     }
 
     protected override void OnExit(ExitEventArgs e)

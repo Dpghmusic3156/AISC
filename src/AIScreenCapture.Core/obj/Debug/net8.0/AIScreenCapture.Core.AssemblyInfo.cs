@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AIScreenCapture.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dabff475077e1867a2e017e5c353c6530504686e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00fe93b29ba644963b4ae6838f94957e6b673a70")]
 [assembly: System.Reflection.AssemblyProductAttribute("AIScreenCapture.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AIScreenCapture.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

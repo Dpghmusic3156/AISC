@@ -1,0 +1,43 @@
+<Window x:Class="AIScreenCapture.UI.Views.ResultPopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="AI Result" Height="300" Width="400"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ResizeMode="NoResize"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Border Background="{DynamicResource MaterialDesignPaper}" CornerRadius="8" Margin="10">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.3" Color="Black" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <!-- Header for dragging -->
+            <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Header_MouseLeftButtonDown" Cursor="SizeAll">
+                <DockPanel LastChildFill="False" Margin="10,0">
+                    <TextBlock Text="AI Result" VerticalAlignment="Center" FontWeight="SemiBold" />
+                    <Button DockPanel.Dock="Right" Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" Click="CloseButton_Click" Padding="0">
+                        <materialDesign:PackIcon Kind="Close" Width="20" Height="20" />
+                    </Button>
+                </DockPanel>
+            </Border>
+            
+            <!-- Content -->
+            <Grid Grid.Row="1" Margin="16">
+                <!-- Placeholder for actual result later -->
+                <TextBlock Text="Waiting for AI Response..." TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolTipBackground}" />
+                <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" IsIndeterminate="True" Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
