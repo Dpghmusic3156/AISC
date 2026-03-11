@@ -8,7 +8,7 @@
 
 **AI Screen Capture** là một tiện ích nhỏ gọn trên Windows giúp bạn chụp màn hình và chuyển ngay hình ảnh đó cho AI (ChatGPT, Claude, Gemini) để phân tích, giải toán, dịch thuật, hoặc giải thích code trực tiếp trên màn hình của bạn.
 
-👉 Mọi thứ hiển thị qua một popup tối giản giống hệt trải nghiệm của các Web Extension hiện đại (như _schoolCheat-AI_).
+👉 Mọi thứ hiển thị qua một popup tối giản.
 
 ---
 
