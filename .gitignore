@@ -12,3 +12,24 @@
 Thumbs.db
 .DS_Store
 src/.vs
+
+# ========================
+# .NET / C# / Visual Studio
+# ========================
+# Build results
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+TestResults/
+
+# Visual Studio / Rider cache / options
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Packages (NuGet)
+packages/
+*.nupkg
