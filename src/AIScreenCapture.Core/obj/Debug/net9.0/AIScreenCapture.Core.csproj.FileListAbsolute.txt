@@ -1,0 +1,12 @@
+H:\hacker\AISC\src\AIScreenCapture.Core\bin\Debug\net9.0\AIScreenCapture.Core.deps.json
+H:\hacker\AISC\src\AIScreenCapture.Core\bin\Debug\net9.0\AIScreenCapture.Core.dll
+H:\hacker\AISC\src\AIScreenCapture.Core\bin\Debug\net9.0\AIScreenCapture.Core.pdb
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.GeneratedMSBuildEditorConfig.editorconfig
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.AssemblyInfoInputs.cache
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.AssemblyInfo.cs
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.csproj.CoreCompileInputs.cache
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.sourcelink.json
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.dll
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\refint\AIScreenCapture.Core.dll
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\AIScreenCapture.Core.pdb
+H:\hacker\AISC\src\AIScreenCapture.Core\obj\Debug\net9.0\ref\AIScreenCapture.Core.dll
