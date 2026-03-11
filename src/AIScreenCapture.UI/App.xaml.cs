@@ -3,12 +3,14 @@ using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using H.NotifyIcon;
+using AIScreenCapture.UI.Views;
 
 namespace AIScreenCapture.UI;
 
 public partial class App : Application
 {
     private TaskbarIcon? _taskbarIcon;
+    private ConfigWindow? _configWindow;
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -22,7 +24,9 @@ public partial class App : Application
         
         var contextMenu = new ContextMenu();
         
-        var settingsItem = new MenuItem { Header = "Settings...", IsEnabled = false };
+        var settingsItem = new MenuItem { Header = "Settings..." };
+        settingsItem.Click += (s, args) => ShowConfigWindow();
+
         var exitItem = new MenuItem { Header = "Exit" };
         exitItem.Click += (s, args) => Application.Current.Shutdown();
 
@@ -31,6 +35,22 @@ public partial class App : Application
         contextMenu.Items.Add(exitItem);
 
         _taskbarIcon.ContextMenu = contextMenu;
+    }
+
+    private void ShowConfigWindow()
+    {
+        if (_configWindow == null)
+        {
+            _configWindow = new ConfigWindow();
+            _configWindow.Closed += (s, e) => _configWindow = null;
+            _configWindow.Show();
+        }
+        else
+        {
+            if (_configWindow.WindowState == WindowState.Minimized)
+                _configWindow.WindowState = WindowState.Normal;
+            _configWindow.Activate();
+        }
     }
 
     protected override void OnExit(ExitEventArgs e)
