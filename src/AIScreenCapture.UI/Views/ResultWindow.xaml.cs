@@ -144,6 +144,6 @@ public partial class ResultWindow : Window
         // Flash confirmation
         NotificationText.Visibility = Visibility.Visible;
         await Task.Delay(2000);
-        NotificationText.Visibility = Visibility.Hidden;
+        NotificationText.Visibility = Visibility.Collapsed;
     }
 }
